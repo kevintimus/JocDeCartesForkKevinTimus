@@ -41,7 +41,7 @@ export class JocComponent implements OnInit {
       if (this.posicion == 1) {
         var regex = /(\d+)/g;
         const numero =  this.currentCard.match(regex);
-        const texto = document.getElementById("Jugador")!;
+        const texto = document.getElementById("Jugador1")!;
         texto.innerHTML = numero;
         console.log(numero)
       }
@@ -49,7 +49,7 @@ export class JocComponent implements OnInit {
       if (this.posicion == 2) {
         var regex = /(\d+)/g;
         const numero =  this.currentCard.match(regex);
-        const texto = document.getElementById("Jugador")!;
+        const texto = document.getElementById("Jugador2")!;
         texto.innerHTML = numero;
         console.log(numero)
 
@@ -57,7 +57,7 @@ export class JocComponent implements OnInit {
       if (this.posicion == 3) {
         var regex = /(\d+)/g;
         const numero =  this.currentCard.match(regex);
-        const texto = document.getElementById("Jugador")!;
+        const texto = document.getElementById("Jugador3")!;
         texto.innerHTML = numero;
         console.log(numero)
 

@@ -1,6 +1,12 @@
 <div class="player">
   <img src="/assets/img/profile/monkey.png" alt="">
   <span> {{ name }} </span>
-  <span id="Jugador"> </span>
+  @if (this.posicio == 1) {
+    <span id="Jugador1"> </span>
+  } @else if (posicio == 2) {
+    <span id="Jugador2"> </span>
+  } @else {
+    <span id="Jugador3"> </span>
+  }
 </div>
 
