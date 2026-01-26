@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Joc} from "../../models/joc";
 import {JugadorComponent} from "../jugador/jugador.component";
 import {NgForOf, NgIf, NgStyle} from "@angular/common";
+import {PonerHtmlService} from '../poner-html.service'
 
 @Component({
   selector: 'app-joc',
@@ -9,7 +10,6 @@ import {NgForOf, NgIf, NgStyle} from "@angular/common";
   imports: [
     JugadorComponent,
     NgStyle,
-    NgForOf,
     NgIf
   ],
   templateUrl: './joc.component.html',
@@ -19,6 +19,8 @@ export class JocComponent implements OnInit {
   pickCardAnimation = false;
   currentCard: string | undefined | any = '';
   game: Joc | undefined;
+  protected i: any;
+  private posicion = 1;
 
   constructor() {}
 
@@ -36,6 +38,31 @@ export class JocComponent implements OnInit {
       this.currentCard = this.game?.stack.pop();
       this.pickCardAnimation = true;
 
+      if (this.posicion == 1) {
+        var regex = /(\d+)/g;
+        const numero =  this.currentCard.match(regex);
+        const texto = document.getElementById("Jugador")!;
+        texto.innerHTML = numero;
+        console.log(numero)
+      }
+
+      if (this.posicion == 2) {
+        var regex = /(\d+)/g;
+        const numero =  this.currentCard.match(regex);
+        const texto = document.getElementById("Jugador")!;
+        texto.innerHTML = numero;
+        console.log(numero)
+
+      }
+      if (this.posicion == 3) {
+        var regex = /(\d+)/g;
+        const numero =  this.currentCard.match(regex);
+        const texto = document.getElementById("Jugador")!;
+        texto.innerHTML = numero;
+        console.log(numero)
+
+      }
+
       setTimeout(()=> {
         this.game?.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
@@ -44,4 +71,11 @@ export class JocComponent implements OnInit {
   }
 
 
+  protected posicionMas1() {
+    this.posicion++
+
+
+
+
+  }
 }

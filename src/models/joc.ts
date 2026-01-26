@@ -1,7 +1,8 @@
 export class Joc {
-  public players: string[] = ['Alumne 1', 'Alumne 2', 'Alumne 3'];
+  public players: string[] = ['Kevin', 'Jose', 'Juan'];
   public stack: string[] = [];
   public playedCards: string[] = [];
+  public imagenes: string[] = []
   public currentPlayer: number = 0;
 
   constructor() {
@@ -10,6 +11,7 @@ export class Joc {
       this.stack.push('hearts_' + i)
       this.stack.push('clubs_' + i)
       this.stack.push('diamonds_' + i)
+      this.stack.push('joker')
 
       shuffle(this.stack);
     }
